@@ -9,12 +9,14 @@
 function ConvertHandler() {
     this.getNum = function(input) {
         let letters = input.match(/[A-Za-z]+/g);
+        if (!letters) { return "" };
         let result = eval(input.split(letters[0])[0]) || 1;
         return result;
     };
 
     this.getUnit = function(input) {
         let letters = input.match(/[A-Za-z]+/g);
+        if (!letters) { return "" };
         let result = letters[0] + input.split(letters[0])[1];
         return result;
     };
